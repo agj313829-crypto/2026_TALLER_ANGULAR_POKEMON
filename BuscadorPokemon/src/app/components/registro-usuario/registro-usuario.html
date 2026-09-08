@@ -1,1 +1,125 @@
-<p>registro-usuario works!</p>
+<main class="form-container">
+
+<body>
+  <h1 id="titulo_formulario">Formulario de Contacto</h1>
+  <form id="form_contacto" autocomplete="on">
+
+    <div id="Nombre">
+      <label for="nombre">Nombre:</label><br>
+      <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan" autocomplete="given-name" required>
+    </div>
+    <br>
+
+    <div id="Apellido">
+      <label for="apellido">Apellido:</label><br>
+      <input type="text" id="apellido" [(ngModel)] name="apellido" placeholder="Ej: Pérez" autocomplete="family-name" required>
+    </div>
+    <br>
+
+    <div id="Tipo_identificacion">
+      <label for="tipo_identificacion">Tipo de Identificación:</label><br>
+      <select id="tipo_identificacion"[(ngModel)] name="tipo_identificacion" required>
+        <option value="" disabled selected>Seleccione una opción</option>
+        <option value="13 - Cédula de Ciudadanía (CC)">Cédula de Ciudadanía (CC)</option>
+        <option value="12 - Tarjeta de Identidad (TI)">Tarjeta de Identidad (TI)</option>
+        <option value="11 - Registro Civil (RC)">Registro Civil (RC)</option>
+        <option value="41 - Pasaporte (PA)">Pasaporte (PA)</option>
+      </select>
+    </div>
+    <br>
+
+    <div id="Numero_identificacion">
+      <label for="numero_identificacion">Número de Identificación:</label><br>
+      <input type="text" id="numero_identificacion"[(ngModel)] name="numero_identificacion" placeholder="Ej: 1020304050" autocomplete="off" required>
+    </div>
+    <br>
+
+    <div id="Fecha_nacimiento">
+      <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
+      <input type="date" id="fecha_nacimiento"[(ngModel)] name="fecha_nacimiento" placeholder="dd/mm/aaaa" required>
+    </div>
+    <br>
+
+    <div id="Celular">
+      <label for="celular">Número de Celular:</label><br>
+      <input type="tel" id="celular" name="celular" pattern="[0-9]{10}" placeholder="3001234567" autocomplete="tel" required>
+    </div>
+    <br>
+
+    <div id="Pais">
+      <label for="pais">País:</label><br>
+      <select id="pais" name="pais"[(ngModel)] autocomplete="country" required>
+        <option value="" disabled selected>Seleccionar</option>
+        <option value="169 - Colombia">Colombia</option>
+        <option value="152 - Chile">Chile</option>
+        <option value="063 - Argentina">Argentina</option>
+      </select>
+    </div>
+    <br>
+
+    <div id="Ciudad">
+      <label for="ciudad">Ciudad:</label><br>
+      <select id="ciudad" name="ciudad" required>
+        <option value="" disabled selected>Seleccione una opción</option>
+        <optgroup label="Colombia">
+          <option value="11001 - Bogotá D.C.">Bogotá D.C.</option>
+          <option value="05001 - Medellín">Medellín</option>
+          <option value="76001 - Cali">Cali</option>
+          <option value="08001 - Barranquilla">Barranquilla</option>
+          <option value="13001 - Cartagena">Cartagena</option>
+        </optgroup>
+        <optgroup label="Chile">
+          <option value="13101 - Santiago">Santiago</option>
+          <option value="05101 - Valparaíso">Valparaíso</option>
+          <option value="08101 - Concepción">Concepción</option>
+          <option value="02101 - Antofagasta">Antofagasta</option>
+          <option value="09101 - Temuco">Temuco</option>
+        </optgroup>
+        <optgroup label="Argentina">
+          <option value="AR-001 - Buenos Aires">Buenos Aires</option>
+          <option value="AR-002 - Córdoba">Córdoba</option>
+          <option value="AR-003 - Rosario">Rosario</option>
+          <option value="AR-004 - Mendoza">Mendoza</option>
+          <option value="AR-005 - La Plata">La Plata</option>
+        </optgroup>
+      </select>
+    </div>
+    <br>
+
+    <div id="Politica_datos">
+      <input type="checkbox" id="politica_datos" name="politica_datos" required>
+      <label for="politica_datos">Acepto la política de tratamiento de datos.</label>
+    </div>
+    <br>
+
+    <div id="Submit">
+      <input type="submit" id="boton_enviar" value="Enviar">
+    </div>
+
+  </form>
+  <div>
+
+@if (ultimoUsuario(); as user) {
+    <div class="user-info">
+        <h3usuario Registrado:</h3>
+        <p><strong>Nombre:</strong> {{ user.id }}</p>
+        <p><strong>Apellido:</strong> {{ user.nombrecompleto }}</p>
+        <p></p>
+}
+      <div>
+        <button type="submit">Buscar</button>
+      </div>
+
+
+    </form>
+  </div>
+    <div id="resultadoPokemon">
+      <img src="">
+      <p>lero lero lero</p>
+    </div>
+
+  
+</body>
+</html>
+
+</main>

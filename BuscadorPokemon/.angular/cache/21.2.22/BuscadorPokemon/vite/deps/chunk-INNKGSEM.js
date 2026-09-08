@@ -6,7 +6,7 @@ import {
   parseCookieValue,
   setRootDomAdapter,
   withHttpTransferCache
-} from "./chunk-DMXQ43QU.js";
+} from "./chunk-OX2R5OQ5.js";
 import {
   APP_ID,
   ApplicationModule,
@@ -6227,4 +6227,4 @@ export {
   provideClientHydration,
   VERSION2 as VERSION
 };
-//# sourceMappingURL=chunk-5XL3DULV.js.map
+//# sourceMappingURL=chunk-INNKGSEM.js.map

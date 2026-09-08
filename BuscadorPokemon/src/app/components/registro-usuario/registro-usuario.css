@@ -1,0 +1,109 @@
+/* Fondo de la página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #ffffff);
+    margin: 0;
+    padding: 40px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #d63384;
+    margin-bottom: 30px;
+}
+
+/* Formulario */
+form {
+    width: 500px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.3);
+    border: 2px solid #f8b6d2;
+}
+
+/* Divs que envuelven cada campo (Nombre, Apellido, Pais, Ciudad, etc.) */
+form > div {
+    margin-bottom: 4px;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #c2185b;
+    font-weight: bold;
+}
+
+/* Campos de texto */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #f8b6d2;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    box-sizing: border-box;
+    background: #fffafc;
+}
+
+/* Estilo de los grupos de ciudades por país dentro del select */
+optgroup {
+    font-weight: bold;
+    color: #d63384;
+    font-style: normal;
+}
+
+optgroup option {
+    color: #6b3a4c;
+    font-weight: normal;
+}
+
+/* Efecto al seleccionar un campo */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #d63384;
+    outline: none;
+    box-shadow: 0 0 8px rgba(214, 51, 132, 0.3);
+}
+
+/* Checkbox y su etiqueta en línea (div#Politica_datos) */
+input[type="checkbox"] {
+    accent-color: #d63384;
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+#Politica_datos label {
+    display: inline;
+    font-weight: normal;
+    color: #6b3a4c;
+}
+
+/* Botón */
+input[type="submit"] {
+    width: 100%;
+    background: #d63384;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Efecto del botón */
+input[type="submit"]:hover {
+    background: #ad1457;
+    transform: scale(1.03);
+}
