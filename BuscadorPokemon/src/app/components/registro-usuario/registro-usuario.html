@@ -1,24 +1,22 @@
 <main class="form-container">
-
-<body>
   <h1 id="titulo_formulario">Formulario de Contacto</h1>
-  <form id="form_contacto" autocomplete="on">
+  <form id="form_contacto" autocomplete="on" (ngSubmit)="guardarUsuario()">
 
     <div id="Nombre">
       <label for="nombre">Nombre:</label><br>
-      <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan" autocomplete="given-name" required>
+      <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" placeholder="Ej: Juan" autocomplete="given-name" required>
     </div>
     <br>
 
     <div id="Apellido">
       <label for="apellido">Apellido:</label><br>
-      <input type="text" id="apellido" [(ngModel)] name="apellido" placeholder="Ej: Pérez" autocomplete="family-name" required>
+      <input type="text" id="apellido" [(ngModel)]="apellido" name="apellido" placeholder="Ej: Pérez" autocomplete="family-name" required>
     </div>
     <br>
 
     <div id="Tipo_identificacion">
       <label for="tipo_identificacion">Tipo de Identificación:</label><br>
-      <select id="tipo_identificacion"[(ngModel)] name="tipo_identificacion" required>
+      <select id="tipo_identificacion" [(ngModel)]="tipo_documento" name="tipo_identificacion" required>
         <option value="" disabled selected>Seleccione una opción</option>
         <option value="13 - Cédula de Ciudadanía (CC)">Cédula de Ciudadanía (CC)</option>
         <option value="12 - Tarjeta de Identidad (TI)">Tarjeta de Identidad (TI)</option>
@@ -30,25 +28,25 @@
 
     <div id="Numero_identificacion">
       <label for="numero_identificacion">Número de Identificación:</label><br>
-      <input type="text" id="numero_identificacion"[(ngModel)] name="numero_identificacion" placeholder="Ej: 1020304050" autocomplete="off" required>
+      <input type="text" id="numero_identificacion" [(ngModel)]="numero_de_identificacion" name="numero_identificacion" placeholder="Ej: 1020304050" autocomplete="off" required>
     </div>
     <br>
 
     <div id="Fecha_nacimiento">
       <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
-      <input type="date" id="fecha_nacimiento"[(ngModel)] name="fecha_nacimiento" placeholder="dd/mm/aaaa" required>
+      <input type="date" id="fecha_nacimiento" [(ngModel)]="fecha_de_nacimiento" name="fecha_nacimiento" placeholder="dd/mm/aaaa" required>
     </div>
     <br>
 
     <div id="Celular">
       <label for="celular">Número de Celular:</label><br>
-      <input type="tel" id="celular" name="celular" pattern="[0-9]{10}" placeholder="3001234567" autocomplete="tel" required>
+      <input type="tel" id="celular" [(ngModel)]="numero_de_celular" name="celular" pattern="[0-9]{10}" placeholder="3001234567" autocomplete="tel" required>
     </div>
     <br>
 
     <div id="Pais">
       <label for="pais">País:</label><br>
-      <select id="pais" name="pais"[(ngModel)] autocomplete="country" required>
+      <select id="pais" [(ngModel)]="pais" name="pais" autocomplete="country" required>
         <option value="" disabled selected>Seleccionar</option>
         <option value="169 - Colombia">Colombia</option>
         <option value="152 - Chile">Chile</option>
@@ -59,7 +57,7 @@
 
     <div id="Ciudad">
       <label for="ciudad">Ciudad:</label><br>
-      <select id="ciudad" name="ciudad" required>
+      <select id="ciudad" [(ngModel)]="ciudad" name="ciudad" required>
         <option value="" disabled selected>Seleccione una opción</option>
         <optgroup label="Colombia">
           <option value="11001 - Bogotá D.C.">Bogotá D.C.</option>
@@ -87,7 +85,7 @@
     <br>
 
     <div id="Politica_datos">
-      <input type="checkbox" id="politica_datos" name="politica_datos" required>
+      <input type="checkbox" id="politica_datos" [(ngModel)]="datos_personales" name="politica_datos" required>
       <label for="politica_datos">Acepto la política de tratamiento de datos.</label>
     </div>
     <br>
@@ -97,29 +95,18 @@
     </div>
 
   </form>
-  <div>
 
-@if (ultimoUsuario(); as user) {
+  @if (ultimoUsuario(); as user) {
     <div class="user-info">
-        <h3usuario Registrado:</h3>
-        <p><strong>Nombre:</strong> {{ user.id }}</p>
-        <p><strong>Apellido:</strong> {{ user.nombrecompleto }}</p>
-        <p></p>
-}
-      <div>
-        <button type="submit">Buscar</button>
-      </div>
-
-
-    </form>
-  </div>
-    <div id="resultadoPokemon">
-      <img src="">
-      <p>lero lero lero</p>
+        <h3>Usuario Registrado:</h3>
+        <p><strong>Nombre:</strong> {{ user.nombreCompleto }}</p>
+        <p><strong>ID:</strong> {{ user.id }}</p>
     </div>
+  }
 
-  
-</body>
-</html>
+  <div id="resultadoPokemon">
+    <img src="">
+    <p>lero lero lero</p>
+  </div>
 
 </main>

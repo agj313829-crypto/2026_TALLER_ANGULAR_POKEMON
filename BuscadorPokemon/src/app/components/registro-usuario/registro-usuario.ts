@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 export interface Usuario {
@@ -24,7 +25,7 @@ export interface Usuario {
 
 @Component({
   selector: 'app-registro-usuario',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   standalone : true,
   templateUrl: './registro-usuario.html',
   styleUrl: './registro-usuario.css',
@@ -69,6 +70,17 @@ export class RegistroUsuario {
     localStorage.setItem(usuarioCreado.id.toString(), JSON.stringify(usuarioCreado));
 
     this.ultimoUsuario.set(usuarioCreado);
+    
+    // Resetear el formulario
+    this.nombre.set('');
+    this.apellido.set('');
+    this.pais.set('');
+    this.ciudad.set('');
+    this.tipo_documento.set('');
+    this.numero_de_identificacion.set('');
+    this.fecha_de_nacimiento.set('');
+    this.numero_de_celular.set('');
+    this.datos_personales.set(false);
     }
 }
 
