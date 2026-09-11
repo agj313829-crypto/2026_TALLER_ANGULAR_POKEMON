@@ -1,4 +1,7 @@
+<div>
 <form (ngSubmit)="buscarPokemon()">
+ </div>
+  @if(pokemonservice.)
   <div>
     <label> Inserte el nombre del Pokemon >:D</label>
     <input
@@ -10,7 +13,7 @@
     />
   </div>
   <div>
-    <button type="submit"> Buscar </button>
+    <button type="submit" [disabled]="cargando()"> Buscar </button>
   </div>
  
 </form>
@@ -18,15 +21,33 @@
 <div id="resultadoPokemon">
 
     @if(pokemon(); as p){
+      <p class="error">{{mensajeError()}}</p>
+    }
 
-        <div>
-            <h2>{{ p.name }}</h2>
-            <img [src]="p.image" [alt]="p.name" />
-            <p><strong>Elementos: </strong>{{ p.type }}</p>
-        </div>
 
-    } @else if(!mensajeError()){
-        <p> Error con aura </p>
-    } 
+    @if(pokemon(); as poke){
+
+      <div appResaltarTargeta colorBorde="#0000FF" class="card-pokemon">
+        <h3>{{ poke.name }} (#{{poke.id}})</h3>
+        <img [src]="poke.img">
+
+
+        <p>
+          Tipo:
+          <span class="badge-tipo" [ngstyle]=">
+            'background-color' : poke.type ==='fire'? '#ff0000':
+                                poke.type ==='water'? '#0000FF':
+                                poke.type ==='grass'? '#008000':
+    }">
+            {{ poke.type }}
+          </span>"
+            
+        </p>
+
+        <P>Exp.Base: <strong>{{ poke.baseExperience }}</strong></P>
+        <button class="btn-guardar" (click)="guardarEnEquipo()">
+          Almacenar en Inventario
+        </button>
+
 
 </div>

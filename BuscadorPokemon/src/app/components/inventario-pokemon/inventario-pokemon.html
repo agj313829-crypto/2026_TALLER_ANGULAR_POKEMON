@@ -1,0 +1,40 @@
+<div>
+    <h2>La mochila de los pokemon</h2>
+    <p> Total en almacen: <strong>{{pokemonservice.mispokemons().length}}</strong></p>
+    </div>
+
+    <div> class="grid-pokemon">
+        @for(poke of pokemonservice.mispokemons(); track poke.id, let idx = $index; let total = $scount)
+        <div> appResaltarTargeta class="item-inventario" [ngclass]="{'favorito-activo': poke.esFavorito}"
+            <span class="posicion-badge"> #{{idx }} de {{ total }}></span>
+            <img [src]="poke.img" alt="">
+            <h4>{{poke.name}}</h4>
+            <p>{{ poke.type }}</p>
+
+            <div> class="acciones">
+                <button (click)="pokemonservice.actualizarfavorito(poke.id)" [class.btn-fav] = "poke.esFavorito"></button>
+
+                {{ poke.esFavorito ? 'favorito' : 'marcar' }}
+                <button class="btn-aliminar" (click)="pokemonservice.eliminarPokemon(poke.id)">
+                    Liberar 
+                    >/button>
+
+                </div>
+
+            } @empty {
+                <div> class="sin-pokemon">
+                    <p> No  tienes ningun pokemon capturado</p>
+                    <p> Registra un nuevo pokemon</p>
+
+                </div>
+            }
+            
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
